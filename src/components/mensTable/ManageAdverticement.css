@@ -1,0 +1,25 @@
+.rowTitle{
+    display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+.adverImgTable{
+    width: 50px;
+}
+.mensWrapper{
+
+    /* width: 1400px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+}
+.AddButton{
+    display: flex;
+   
+   width: 100%;
+   justify-content: end;
+  
+    
+}

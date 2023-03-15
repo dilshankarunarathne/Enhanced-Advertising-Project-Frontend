@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  color: rgb(0, 0, 0);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: 0.5s all ease;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.47);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.47);
+} .joinbutton{
+  color: white;
+  padding: 10px 20px;
+ border-radius: 10px;
+  background-color: #1dbf73;
+  border-color: #1dbf73;
+  box-shadow: none;
+  cursor: pointer;
+
+
+}
+.joinbutton2{
+  color: white;
+  padding: 10px 20px;
+ border-radius: 10px;
+  background-color: #d35400;
+  border-color: #1dbf73;
+  box-shadow: none;
+  cursor: pointer;
+
+
+}
+  .joinbutton :hover {
+  background-color: #e4ece8;
+  border-color: #1dbf73;
+  border: 2px solid;
+  color: black;
+}
+ .container{
+  width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+
+ }
+.logo{
+  width: 200px;
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+
+ 
+} .userimge{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.options {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 999;
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  font-weight: 300;
+  color: gray;
+}
+.links{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
