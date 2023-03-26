@@ -17,7 +17,7 @@ export const Mens = () => {
       <div class="container ">
         <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded col-12">
           <div className="rowTitle">
-            <h2>Mens Adverticement Details</h2>
+            <h2>Male Adverticement Details</h2>
             <Button variant="primary" onClick={handleShow}>
               Add New Adverticement
             </Button>
@@ -40,30 +40,15 @@ export const Mens = () => {
                     <td>Rual Octo</td>
                     <td>
                       {" "}
-                      <img
-                        src={PF + "adverticement/2.png"}
-                        className="adverImgTable"
-                        alt=""
-                      />
+                      <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
                     </td>
                     <td>Male</td>
-                    <td>25</td>
+                    <td>27-40</td>
                     <td className="EditDelete">
-                      <a
-                        href="#"
-                        class="edit"
-                        title="Edit"
-                        data-toggle="tooltip"
-                      >
+                      <a href="#" class="edit" title="Edit" data-toggle="tooltip">
                         <span>Edit</span>
                       </a>
-                      <a
-                        href="#"
-                        class="delete"
-                        title="Delete"
-                        data-toggle="tooltip"
-                        style={{ color: "red" }}
-                      >
+                      <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
                         <span>Delete</span>
                       </a>
                     </td>
@@ -73,30 +58,15 @@ export const Mens = () => {
                     <td>Rual Octo</td>
                     <td>
                       {" "}
-                      <img
-                        src={PF + "adverticement/2.png"}
-                        className="adverImgTable"
-                        alt=""
-                      />
+                      <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
                     </td>
                     <td>Male</td>
-                    <td>25</td>
+                    <td>27-40</td>
                     <td className="EditDelete">
-                      <a
-                        href="#"
-                        class="edit"
-                        title="Edit"
-                        data-toggle="tooltip"
-                      >
+                      <a href="#" class="edit" title="Edit" data-toggle="tooltip">
                         <span>Edit</span>
                       </a>
-                      <a
-                        href="#"
-                        class="delete"
-                        title="Delete"
-                        data-toggle="tooltip"
-                        style={{ color: "red" }}
-                      >
+                      <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
                         <span>Delete</span>
                       </a>
                     </td>
@@ -106,30 +76,15 @@ export const Mens = () => {
                     <td>Rual Octo</td>
                     <td>
                       {" "}
-                      <img
-                        src={PF + "adverticement/2.png"}
-                        className="adverImgTable"
-                        alt=""
-                      />
+                      <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
                     </td>
                     <td>Male</td>
-                    <td>25</td>
+                    <td>27-40</td>
                     <td>
-                      <a
-                        href="#"
-                        class="edit"
-                        title="Edit"
-                        data-toggle="tooltip"
-                      >
+                      <a href="#" class="edit" title="Edit" data-toggle="tooltip">
                         <span>Edit</span>
                       </a>
-                      <a
-                        href="#"
-                        class="delete"
-                        title="Delete"
-                        data-toggle="tooltip"
-                        style={{ color: "red" }}
-                      >
+                      <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
                         <span>Delete</span>
                       </a>
                     </td>
@@ -141,49 +96,33 @@ export const Mens = () => {
 
           {/* <!--- Model Box ---> */}
           <div className="model_box">
-            <Modal
-              show={show}
-              onHide={handleClose}
-              backdrop="static"
-              keyboard={false}
-            >
+            <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
               <Modal.Header closeButton>
                 <Modal.Title>Add Record</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <form>
                   <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter Name"
-                    />
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" />
                   </div>
                   <div class="form-group mt-3">
-                    <input
-                      type="file"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="Image"
-                    />
+                    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Image" />
                   </div>
                   <div class="form-group mt-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter Age"
-                    />
+                    <select class="form-control">
+                      <option selected hidden>
+                        age group
+                      </option>
+                      <option>4-14</option>
+                      <option>13-26</option>
+                      <option>27-40</option>
+                      <option>Above 40</option>
+                    </select>
                   </div>
                   <div class="form-group mt-3">
                     <select class="form-control">
                       <option>Male</option>
                       <option>Female</option>
-                      <option>Other</option>
                     </select>
                   </div>
 

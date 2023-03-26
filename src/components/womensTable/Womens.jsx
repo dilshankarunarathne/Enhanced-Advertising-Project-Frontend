@@ -15,7 +15,7 @@ export const Womens = () => {
     <div class="container ">
       <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded col-12">
         <div className="rowTitle">
-          <h2>Womens Adverticement Details</h2>
+          <h2>Female Adverticement Details</h2>
         </div>
         <div class="row">
           <div class="table-responsive ">
@@ -35,34 +35,18 @@ export const Womens = () => {
                   <td>Rual Octo</td>
                   <td>
                     {" "}
-                    <img
-                      src={PF + "adverticement/2.png"}
-                      className="adverImgTable"
-                      alt=""
-                    />
+                    <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
                   </td>
-                  <td>Male</td>
-                  <td>25</td>
+                  <td>Female</td>
+                  <td>27-40</td>
                   <td>
-                    <a
-                      href="#"
-                      class="view"
-                      title="View"
-                      data-toggle="tooltip"
-                      style={{ color: "#10ab80" }}
-                    >
+                    <a href="#" class="view" title="View" data-toggle="tooltip" style={{ color: "#10ab80" }}>
                       <i class="material-icons">&#xE417;</i>
                     </a>
                     <a href="#" class="edit" title="Edit" data-toggle="tooltip">
                       <i class="material-icons">&#xE254;</i>
                     </a>
-                    <a
-                      href="#"
-                      class="delete"
-                      title="Delete"
-                      data-toggle="tooltip"
-                      style={{ color: "red" }}
-                    >
+                    <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
                       <i class="material-icons">&#xE872;</i>
                     </a>
                   </td>
@@ -72,34 +56,18 @@ export const Womens = () => {
                   <td>Rual Octo</td>
                   <td>
                     {" "}
-                    <img
-                      src={PF + "adverticement/2.png"}
-                      className="adverImgTable"
-                      alt=""
-                    />
+                    <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
                   </td>
-                  <td>Male</td>
-                  <td>25</td>
+                  <td>Female</td>
+                  <td>27-40</td>
                   <td>
-                    <a
-                      href="#"
-                      class="view"
-                      title="View"
-                      data-toggle="tooltip"
-                      style={{ color: "#10ab80" }}
-                    >
+                    <a href="#" class="view" title="View" data-toggle="tooltip" style={{ color: "#10ab80" }}>
                       <i class="material-icons">&#xE417;</i>
                     </a>
                     <a href="#" class="edit" title="Edit" data-toggle="tooltip">
                       <i class="material-icons">&#xE254;</i>
                     </a>
-                    <a
-                      href="#"
-                      class="delete"
-                      title="Delete"
-                      data-toggle="tooltip"
-                      style={{ color: "red" }}
-                    >
+                    <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
                       <i class="material-icons">&#xE872;</i>
                     </a>
                   </td>
@@ -109,37 +77,16 @@ export const Womens = () => {
                   <td>Rual Octo</td>
                   <td>
                     {" "}
-                    <img
-                      src={PF + "adverticement/2.png"}
-                      className="adverImgTable"
-                      alt=""
-                    />
+                    <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
                   </td>
-                  <td>Male</td>
-                  <td>25</td>
+                  <td>Female</td>
+                  <td>27-40</td>
                   <td>
-                    <a
-                      href="#"
-                      class="view"
-                      title="View"
-                      data-toggle="tooltip"
-                      style={{ color: "#10ab80" }}
-                    >
+                    <a href="#" class="view" title="View" data-toggle="tooltip" style={{ color: "#10ab80" }}>
                       <i class="material-icons">&#xE417;</i>
                     </a>
-                    <a
-                      href="#"
-                      class="edit"
-                      title="Edit"
-                      data-toggle="tooltip"
-                    ></a>
-                    <a
-                      href="#"
-                      class="delete"
-                      title="Delete"
-                      data-toggle="tooltip"
-                      style={{ color: "red" }}
-                    >
+                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"></a>
+                    <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
                       <i class="material-icons">&#xE872;</i>
                     </a>
                   </td>
@@ -151,51 +98,23 @@ export const Womens = () => {
 
         {/* <!--- Model Box ---> */}
         <div className="model_box">
-          <Modal
-            show={show}
-            onHide={handleClose}
-            backdrop="static"
-            keyboard={false}
-          >
+          <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
             <Modal.Header closeButton>
               <Modal.Title>Add Record</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <form>
                 <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter Name"
-                  />
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" />
                 </div>
                 <div class="form-group mt-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter Country"
-                  />
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Country" />
                 </div>
                 <div class="form-group mt-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter City"
-                  />
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter City" />
                 </div>
                 <div class="form-group mt-3">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="exampleInputPassword1"
-                    placeholder="Enter Country"
-                  />
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Country" />
                 </div>
 
                 <button type="submit" class="btn btn-success mt-4">

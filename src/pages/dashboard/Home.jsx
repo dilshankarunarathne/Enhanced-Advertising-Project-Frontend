@@ -19,11 +19,11 @@ export const Home = () => {
             <div className="sub">
               <div className="sub2">
                 <span className="subtitles">Gender</span>
-                <span className="subtitles">Male</span>
+                <span className="subtitles">Female</span>
               </div>
               <div className="sub3">
-                <span className="subtitles">Age</span>
-                <span className="subtitles">25</span>
+                <span className="subtitles">Age Limit</span>
+                <span className="subtitles">25-40 </span>
               </div>
             </div>
 
@@ -31,96 +31,50 @@ export const Home = () => {
             <span className="Topic">Recommended Adverticement </span>
             <div className="adverticement">
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/ads2.webp"} className="adverImg" alt="" />
               </div>
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/cream1.jpg"} className="adverImg" alt="" />
               </div>
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/ads3.webp"} className="adverImg" alt="" />
               </div>
             </div>
             <div className="adverticement">
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/ads4.webp"} className="adverImg" alt="" />
               </div>
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
               </div>
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/3.png"} className="adverImg" alt="" />
+              </div>
+            </div>
+            {/*  
+            <div className="adverticement">
+              <div className="SingleAdverticemet">
+                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
+              </div>
+              <div className="SingleAdverticemet">
+                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
+              </div>
+              <div className="SingleAdverticemet">
+                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
               </div>
             </div>
             <div className="adverticement">
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
               </div>
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
               </div>
               <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
+                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
               </div>
             </div>
-            <div className="adverticement">
-              <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
-              </div>
-              <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
-              </div>
-              <div className="SingleAdverticemet">
-                <img
-                  src={PF + "adverticement/2.png"}
-                  className="adverImg"
-                  alt=""
-                />
-              </div>
-            </div>
+            */}
           </div>
         </div>
       </div>
