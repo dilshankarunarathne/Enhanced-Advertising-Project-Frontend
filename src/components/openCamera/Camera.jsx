@@ -70,7 +70,7 @@ function Camera() {
               })
               .catch((error) => {
                 console.error("Error sending video data", error);
-              }
+              });
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
