@@ -33,3 +33,5 @@ To contribute to the project, follow these steps:
 3. Commit your changes: `git commit -m "Commit message"`
 4. Push your changes to the branch: `git push origin contribution/ContributionName`
 5. Open a pull request
+
+## License
