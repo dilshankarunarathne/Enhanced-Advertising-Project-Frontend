@@ -60,6 +60,7 @@ function Camera() {
             fetch("https://localhost/api/endpoint", {
               method: "POST",
               headers: {
+                "Content-Type": "application/json",
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
