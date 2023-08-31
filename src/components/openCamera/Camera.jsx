@@ -72,6 +72,9 @@ function Camera() {
         <button onClick={handleButtonClick} className="Capturebutton">
           {stream ? "Stop Camera" : "Start Camera"}
         </button>
+        <button onClick={handleCaptureClick} className="Capturebutton">
+          Capture
+        </button>
       </div>
     </div>
   );
