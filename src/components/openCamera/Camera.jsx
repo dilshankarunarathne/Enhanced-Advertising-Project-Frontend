@@ -5,6 +5,7 @@ import "./Camera.css";
 function Camera() {
   const [stream, setStream] = useState(null);
   const videoRef = useRef(null);
+  const canvasRef = useRef(null);
 
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
