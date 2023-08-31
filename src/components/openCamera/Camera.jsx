@@ -63,6 +63,7 @@ function Camera() {
                 "Content-Type": "video/mp4",
               },
               body: blob,
+            })
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
