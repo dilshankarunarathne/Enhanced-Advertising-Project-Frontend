@@ -66,6 +66,8 @@ function Camera() {
             })
               .then((response) => response.json())
               .then((data) => {
+                console.log(data); // Do something with the response data
+              }
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
