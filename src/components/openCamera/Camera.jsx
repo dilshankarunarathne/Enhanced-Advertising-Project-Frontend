@@ -77,7 +77,7 @@ function Camera() {
         </button>
       </div>
 
-      
+      <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
     </div>
   );
 }
