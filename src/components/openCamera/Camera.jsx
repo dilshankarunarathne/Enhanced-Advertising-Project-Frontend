@@ -30,6 +30,7 @@ function Camera() {
       videoTracks.forEach((track) => {
         stream.getTracks().forEach((track) => track.stop());
         setStream(null);
+        setIsStreaming(false);
       });
       setStream(null);
     } else {
