@@ -46,6 +46,21 @@ function Camera() {
     }
   };
 
+  const handleCaptureClick = () => {
+    if (videoRef.current && canvasRef.current) {
+      const video = videoRef.current;
+      const canvas = canvasRef.current;
+      const context = canvas.getContext("2d");
+
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      const imageData = canvas.toDataURL("image/png");
+      console.log(imageData); // Do something with the image data
+    }
+  };
+
   return (
     <div className="video">
       <div className="VideoDiv">
