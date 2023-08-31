@@ -1,7 +1,6 @@
 # Enhanced Advertising 
 
-This project is a web application that allows users to create and manage advertisements. The application is built using the MERN stack (MongoDB, Express, React, Node.js). The application is deployed on Heroku and can be accessed at https://enhanced-advertising.herokuapp.com/.
-
+This project is a web application that allows users to create and manage advertisements. 
 
 [![Version](https://img.shields.io/badge/version-0.1-brightgreen.svg)](https://pypi.org/project/ad-topic-recommender/)
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
