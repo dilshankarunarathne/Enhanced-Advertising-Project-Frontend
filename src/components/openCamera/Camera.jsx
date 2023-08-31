@@ -134,7 +134,13 @@ function Camera() {
         <button onClick={handleCaptureClick} className="Capturebutton">
           Capture
         </button>
-        
+        <button onClick={handleButtonClick} className="Capturebutton">
+          {isStreaming ? "Stop Streaming" : "Start Streaming"}
+        </button>
+        {isStreaming && (
+          <button onClick={handleStopStreamingClick} className="Capturebutton">
+            Stop Streaming
+          </button>
       </div>
       
 
