@@ -47,6 +47,8 @@ function Camera() {
 
           const mediaRecorder = new MediaRecorder(stream);
           const chunks = [];
+
+          mediaRecorder.addEventListener("dataavailable", (event) => {
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
