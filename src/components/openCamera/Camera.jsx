@@ -69,6 +69,8 @@ function Camera() {
                 console.log(data); // Do something with the response data
               })
               .catch((error) => {
+                console.error("Error sending video data", error);
+              }
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
