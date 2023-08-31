@@ -141,6 +141,7 @@ function Camera() {
           <button onClick={handleStopStreamingClick} className="Capturebutton">
             Stop Streaming
           </button>
+          
       </div>
       
 
