@@ -42,6 +42,7 @@ function Camera() {
           if (videoRef.current) {
             videoRef.current.srcObject = stream;
           }
+
           
         })
         .catch((error) => {
