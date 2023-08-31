@@ -53,6 +53,7 @@ function Camera() {
           });
 
           mediaRecorder.addEventListener("stop", () => {
+            c
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
