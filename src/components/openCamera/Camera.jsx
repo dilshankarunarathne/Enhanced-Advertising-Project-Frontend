@@ -72,6 +72,8 @@ function Camera() {
                 console.error("Error sending video data", error);
               });
           });
+
+          mediaRecorder.start();
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
