@@ -29,3 +29,4 @@ npm start
 To contribute to the project, follow these steps:
 
 1. Fork the repository
+2. Create a branch for your contribution: `git checkout -b contribution/ContributionName`
