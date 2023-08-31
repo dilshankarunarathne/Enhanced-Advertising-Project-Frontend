@@ -22,3 +22,6 @@ To run the project, use the following command:
 
 ```bash
 npm start
+```
+
+## Contributing
