@@ -57,7 +57,21 @@ function Camera() {
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
       const imageData = canvas.toDataURL("image/png");
-      console.log(imageData); // Do something with the image data
+
+      fetch("https://example.com/api/endpoint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ image: imageData }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data); // Do something with the response data
+        })
+        .catch((error) => {
+          console.error("Error sending image data", error);
+        });
     }
   };
 
