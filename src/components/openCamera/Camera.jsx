@@ -76,6 +76,8 @@ function Camera() {
           Capture
         </button>
       </div>
+
+      
     </div>
   );
 }
