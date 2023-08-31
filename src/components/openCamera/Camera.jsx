@@ -81,6 +81,14 @@ function Camera() {
     }
   };
 
+  const handleStopStreamingClick = () => {
+    if (stream) {
+      stream.getTracks().forEach((track) => track.stop());
+      setStream(null);
+      setIsStreaming(false);
+    }
+  };
+
   const handleCaptureClick = () => {
     if (videoRef.current && canvasRef.current) {
       const video = videoRef.current;
