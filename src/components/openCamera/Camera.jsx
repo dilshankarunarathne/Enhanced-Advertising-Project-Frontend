@@ -134,7 +134,9 @@ function Camera() {
         <button onClick={handleCaptureClick} className="Capturebutton">
           Capture
         </button>
+        
       </div>
+      
 
       <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
     </div>
