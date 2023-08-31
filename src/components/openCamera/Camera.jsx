@@ -59,6 +59,7 @@ function Camera() {
 
             fetch("https://localhost/api/endpoint", {
               method: "POST",
+              headers: {
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
