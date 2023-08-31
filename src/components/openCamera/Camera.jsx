@@ -49,6 +49,8 @@ function Camera() {
           const chunks = [];
 
           mediaRecorder.addEventListener("dataavailable", (event) => {
+            chunks.push(event.data);
+          }
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
