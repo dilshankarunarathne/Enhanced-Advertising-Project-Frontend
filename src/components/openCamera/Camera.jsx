@@ -61,6 +61,7 @@ function Camera() {
               method: "POST",
               headers: {
                 "Content-Type": "video/mp4",
+              },
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
