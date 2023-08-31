@@ -27,7 +27,8 @@ function Camera() {
     if (stream) {
       const videoTracks = stream.getVideoTracks();
       videoTracks.forEach((track) => {
-        track.stop();
+        stream.getTracks().forEach((track) => track.stop());
+        setStream(null);
       });
       setStream(null);
     } else {
