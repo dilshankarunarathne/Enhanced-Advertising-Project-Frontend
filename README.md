@@ -27,3 +27,5 @@ npm start
 ## Contributing
 
 To contribute to the project, follow these steps:
+
+1. Fork the repository
