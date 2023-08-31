@@ -51,6 +51,7 @@ function Camera() {
           mediaRecorder.addEventListener("dataavailable", (event) => {
             chunks.push(event.data);
           });
+
           
         })
         .catch((error) => {
