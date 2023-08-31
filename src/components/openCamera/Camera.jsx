@@ -56,6 +56,8 @@ function Camera() {
             const blob = new Blob(chunks, { type: "video/mp4" });
             const videoURL = URL.createObjectURL(blob);
             console.log(videoURL);
+
+            fetch("https://localhost/api/endpoint", {
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
