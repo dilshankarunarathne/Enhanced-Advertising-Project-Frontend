@@ -43,7 +43,7 @@ function Camera() {
             videoRef.current.srcObject = stream;
           }
 
-          
+          console.log("streaming...!");
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
