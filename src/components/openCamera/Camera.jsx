@@ -58,6 +58,8 @@ function Camera() {
 
       const imageData = canvas.toDataURL("image/png");
 
+      console.log("captured...!");
+
       fetch("https://example.com/api/endpoint", {
         method: "POST",
         headers: {
