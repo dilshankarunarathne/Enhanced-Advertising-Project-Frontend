@@ -65,6 +65,7 @@ function Camera() {
               body: blob,
             })
               .then((response) => response.json())
+              .then((data) => {
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
