@@ -53,7 +53,8 @@ function Camera() {
           });
 
           mediaRecorder.addEventListener("stop", () => {
-            c
+            const blob = new Blob(chunks, { type: "video/mp4" });
+            const videoURL = window.URL.createObjectURL(blob);
         })
         .catch((error) => {
           console.error("Error accessing camera", error);
