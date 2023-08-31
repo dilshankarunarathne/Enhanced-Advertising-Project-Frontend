@@ -38,6 +38,7 @@ function Camera() {
         .getUserMedia({ video: true })
         .then((stream) => {
           setStream(stream);
+          setIsStreaming(true);
           if (videoRef.current) {
             videoRef.current.srcObject = stream;
           }
