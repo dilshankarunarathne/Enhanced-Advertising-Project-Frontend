@@ -25,3 +25,5 @@ npm start
 ```
 
 ## Contributing
+
+To contribute to the project, follow these steps:
