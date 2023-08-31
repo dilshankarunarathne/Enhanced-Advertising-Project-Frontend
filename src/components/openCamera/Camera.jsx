@@ -60,7 +60,7 @@ function Camera() {
 
       console.log("captured...!");
 
-      fetch("https://example.com/api/endpoint", {
+      fetch("https://localhost/api/endpoint", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
