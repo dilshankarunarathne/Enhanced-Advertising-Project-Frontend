@@ -57,7 +57,7 @@ function Camera() {
             const videoURL = URL.createObjectURL(blob);
             console.log(videoURL);
 
-            fetch("http://127.0.0.1:8000/", {
+            fetch("http://127.0.0.1:8000/upload", {
               method: "POST",
               headers: {
                 "Content-Type": "video/mp4",
