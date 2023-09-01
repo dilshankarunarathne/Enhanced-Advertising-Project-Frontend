@@ -103,7 +103,7 @@ function Camera() {
 
       console.log("captured...!");
 
-      fetch("http://127.0.0.1:8000/image", {
+      fetch("http://127.0.0.1:8000/image", { // TODO: BUG
         method: "POST",
         headers: {
           "Content-Type": "application/json",
