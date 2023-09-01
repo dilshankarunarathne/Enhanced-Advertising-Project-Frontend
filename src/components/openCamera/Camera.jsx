@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-
 import "./Camera.css";
 
 function Camera() {
@@ -43,6 +42,39 @@ function Camera() {
         });
     }
   };
+
+  useEffect(() => {
+    let intervalId;
+    if (stream) {
+      intervalId = setInterval(() => {
+        const canvas = document.createElement("canvas");
+        canvas.width = videoRef.current.videoWidth;
+        canvas.height = videoRef.current.videoHeight;
+        canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
+        canvas.toBlob((blob) => {
+          const formData = new FormData();
+          formData.append("image", blob, "image.jpg");
+          fetch("http://127.0.0.1:8000/image", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.text();
+            })
+            .then((data) => {
+              console.log(data);
+            })
+            .catch((error) => {
+              console.error("Error sending image", error);
+            });
+        }, "image/jpeg", 0.9);
+      }, 10000);
+    }
+    return () => clearInterval(intervalId);
+  }, [stream]);
 
   return (
     <div className="video">
