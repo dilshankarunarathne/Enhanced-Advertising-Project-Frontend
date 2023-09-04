@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 export default function Login() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const email = useRef();
+  const username = useRef();
   const password = useRef();
   const navigate = useNavigate();
 
