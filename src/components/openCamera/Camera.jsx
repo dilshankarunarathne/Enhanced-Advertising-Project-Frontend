@@ -45,6 +45,7 @@ function Camera() {
 
   useEffect(() => {
     let intervalId;
+    
     if (stream) {
       intervalId = setInterval(() => {
         const canvas = document.createElement("canvas");
