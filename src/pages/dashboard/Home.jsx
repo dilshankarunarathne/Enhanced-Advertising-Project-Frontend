@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Camera from "../../components/openCamera/Camera";
 
 import "./home.css";
+
 export const Home = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
