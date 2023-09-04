@@ -20,6 +20,7 @@ export default function Register() {
       const user = new FormData();
       user.append("email", email.current.value);
       user.append("password", password.current.value);
+      user.append("username", username.current.value);
       user.append("is_adviser", false); // TODO: get from toggle
 
       const config = {
@@ -35,7 +36,7 @@ export default function Register() {
         await axios.post("http://127.0.0.1:8000/api/auth/register", user, config);
         navigate("/login");
       } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
       }
     }
   };
