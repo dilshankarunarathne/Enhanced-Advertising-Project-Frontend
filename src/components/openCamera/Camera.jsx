@@ -52,10 +52,11 @@ function Camera() {
         canvas.width = videoRef.current.videoWidth;
         canvas.height = videoRef.current.videoHeight;
         canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
-        
+
         canvas.toBlob((blob) => {
           const formData = new FormData();
           formData.append("image", blob, "image.jpg");
+          
           fetch("http://127.0.0.1:8000/api/image/evaluate", {
             method: "POST",
             body: formData,
