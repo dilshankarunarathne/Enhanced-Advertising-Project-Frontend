@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Camera from "../../components/openCamera/Camera";
 
-import { Redirect } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 
 import "./home.css";
 
