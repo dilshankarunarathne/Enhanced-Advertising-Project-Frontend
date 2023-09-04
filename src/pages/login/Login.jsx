@@ -17,7 +17,6 @@ export default function Login() {
     formData.append('username', usernameValue);
     formData.append('password', passwordValue);
     
-
     const response = await fetch(
       'http://127.0.0.1:8000/api/auth/login', {
       method: 'POST',
