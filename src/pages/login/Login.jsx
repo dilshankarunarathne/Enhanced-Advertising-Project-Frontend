@@ -27,7 +27,7 @@ export default function Login() {
 
     if (response.ok) {  // successful login
       const data = await response.json();
-      
+      const token
 
 
       navigate("/");
