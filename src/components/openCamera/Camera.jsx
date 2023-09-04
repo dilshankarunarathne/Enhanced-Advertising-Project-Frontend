@@ -45,13 +45,14 @@ function Camera() {
 
   useEffect(() => {
     let intervalId;
-    
+
     if (stream) {
       intervalId = setInterval(() => {
         const canvas = document.createElement("canvas");
         canvas.width = videoRef.current.videoWidth;
         canvas.height = videoRef.current.videoHeight;
         canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
+        
         canvas.toBlob((blob) => {
           const formData = new FormData();
           formData.append("image", blob, "image.jpg");
