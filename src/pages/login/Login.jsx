@@ -15,6 +15,8 @@ export default function Login() {
     
     const user = new FormData();
     
+    user.append("password", password.current.value);
+    user.append("username", username.current.value);
 
     const config = {
       headers: {
