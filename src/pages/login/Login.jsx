@@ -34,7 +34,7 @@ export default function Login() {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
       },
-      body: JSON.stringify({ username: usernameValue, password: passwordValue })
+      body: formData
     });
 
     if (response.ok) {  // successful login
