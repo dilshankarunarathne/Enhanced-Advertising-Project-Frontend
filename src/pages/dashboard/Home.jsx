@@ -6,6 +6,7 @@ import "./home.css";
 
 export const Home = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  
   return (
     <div>
       <Navbar></Navbar>
