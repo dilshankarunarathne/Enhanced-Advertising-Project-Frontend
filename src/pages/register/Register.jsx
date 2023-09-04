@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./register.css";
 
+const user = new FormData();
+
 export default function Register() {
   const username = useRef();
   const email = useRef();
