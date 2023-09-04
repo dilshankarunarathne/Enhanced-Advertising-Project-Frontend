@@ -16,9 +16,11 @@ export const Home = () => {
       <div className="homewrapper">
         <div className="Container">
           {" "}
+
           <div className="LeftBar">
             <Camera></Camera>
           </div>
+          
           <div className="RightBar">
             <span className="Topic">Extracted Details</span>
             <hr />
