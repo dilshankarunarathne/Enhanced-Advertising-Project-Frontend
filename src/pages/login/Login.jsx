@@ -16,7 +16,7 @@ export default function Login() {
     const emailValue = email.current.value;
     const passwordValue = password.current.value;
 
-    const response = 
+    const response = await
   };
 
   return (
