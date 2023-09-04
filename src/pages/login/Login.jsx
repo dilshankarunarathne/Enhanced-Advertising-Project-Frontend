@@ -14,7 +14,7 @@ export default function Login() {
 
     const formData = new FormData();
     formData.append('username', username.current.value);
-    formData.append('password', passwordValue);
+    formData.append('password', password.current.value);
     
     const response = await fetch(
       'http://127.0.0.1:8000/api/auth/login', {
