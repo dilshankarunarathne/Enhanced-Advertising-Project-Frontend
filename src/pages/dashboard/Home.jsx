@@ -48,7 +48,7 @@ export const Home = () => {
                 <img src={PF + "adverticement/ads3.webp"} className="adverImg" alt="" />
               </div>
             </div>
-            
+
             <div className="adverticement">
               <div className="SingleAdverticemet">
                 <img src={PF + "adverticement/ads4.webp"} className="adverImg" alt="" />
@@ -60,6 +60,7 @@ export const Home = () => {
                 <img src={PF + "adverticement/3.png"} className="adverImg" alt="" />
               </div>
             </div>
+            
             {/*  
             <div className="adverticement">
               <div className="SingleAdverticemet">
