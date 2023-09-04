@@ -12,8 +12,9 @@ export default function Login() {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    
+
     const formData = new FormData();
+    
 
     const response = await fetch(
       'http://127.0.0.1:8000/api/auth/login', {
