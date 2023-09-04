@@ -1,34 +1,64 @@
 import "./login.css";
 
 import { Link, useNavigate } from "react-router-dom";
-
 import { useRef } from "react";
+import axios from "axios";
 
 export default function Login() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const email = useRef();
+  const username = useRef();
   const password = useRef();
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    navigate("/");
+
+    const formData = new FormData();
+    formData.append('username', username.current.value);
+    formData.append('password', password.current.value);
+    
+    try {
+      const response = await axios.post(
+        'http://127.0.0.1:8000/api/auth/login',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }
+      );
+      
+      if (response.status === 200) {  // successful login
+        const data = await response.data;
+        
+        const token = data.access_token;
+        localStorage.setItem('token', token);
+
+        navigate("/home");        
+      } 
+    } catch (error) {
+      console.error(error);
+    }
+
   };
 
   return (
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
+
           <form className="loginBox" onSubmit={handleClick}>
             <span className="SignInName">Sign In Now.</span>
             <span className="details">Enter your details below.</span>
+
             <input
-              placeholder="Email"
-              type="email"
+              placeholder="Username"
+              type="text"
               required
               className="loginInput"
-              ref={email}
+              ref={username}
             />
+
             <input
               placeholder="Password"
               type="password"
@@ -37,8 +67,10 @@ export default function Login() {
               className="loginInput"
               ref={password}
             />
+
             <button className="loginButton">"Sign In"</button>
             <span className="loginForgot">Forgot Password?</span>
+
             <div className="loginRegister">
               <span className="notamem">Not a member?</span>
               <Link to={"/register"}>
@@ -52,6 +84,7 @@ export default function Login() {
                 </button>
               </Link>
             </div>
+
           </form>
         </div>
         <div

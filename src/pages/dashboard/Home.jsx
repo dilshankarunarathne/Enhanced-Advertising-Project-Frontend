@@ -2,7 +2,23 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Camera from "../../components/openCamera/Camera";
 
+import { Navigate } from "react-router-dom";
+
 import "./home.css";
+
+const withAuth = (Component) => {
+  const AuthRoute = () => {
+    const isAuthenticated = localStorage.getItem("token");
+
+    if (!isAuthenticated) {
+      return <Navigate to="/login" />;
+    }
+
+    return <Component />;
+  };
+
+  return AuthRoute;
+};
 
 export const Home = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -85,10 +101,12 @@ export const Home = () => {
               </div>
             </div>
             */}
-            
+
           </div>
         </div>
       </div>
     </div>
   );
 };
+
+export default withAuth(Home);

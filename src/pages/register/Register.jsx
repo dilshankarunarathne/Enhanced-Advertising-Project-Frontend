@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./register.css";
 
 export default function Register() {
@@ -15,23 +16,35 @@ export default function Register() {
     if (passwordAgain.current.value !== password.current.value) {
       passwordAgain.current.setCustomValidity("Password don't match");
     } else {
-      const user = {
-        username: username.current.value,
-        email: email.current.value,
-        password: password.current.value,
+
+      const user = new FormData();
+      user.append("email", email.current.value);
+      user.append("password", password.current.value);
+      user.append("username", username.current.value);
+      user.append("is_adviser", false); // TODO: get from toggle
+
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+        }
       };
 
       try {
-        // await axios.post("/auth/register", user);
+        console.log("registering user with data:", user);
+        await axios.post("http://127.0.0.1:8000/api/auth/register", user, config);
         navigate("/login");
       } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
       }
     }
   };
+
   const routeChange = () => {
     navigate("/login");
   };
+
   return (
     <div className="login">
       <div className="loginWrapper">
