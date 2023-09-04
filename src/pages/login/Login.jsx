@@ -51,7 +51,7 @@ export default function Login() {
               className="loginInput"
               ref={email}
             />
-            
+
             <input
               placeholder="Password"
               type="password"
@@ -60,6 +60,7 @@ export default function Login() {
               className="loginInput"
               ref={password}
             />
+            
             <button className="loginButton">"Sign In"</button>
             <span className="loginForgot">Forgot Password?</span>
             <div className="loginRegister">
