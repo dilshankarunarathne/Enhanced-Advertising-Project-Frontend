@@ -23,6 +23,7 @@ export default function Register() {
       };
 
       try {
+        console.log("registering user");
         await axios.post("http://127.0.0.1:8000/api/auth/register", user);
         navigate("/login");
       } catch (error) {
