@@ -26,8 +26,7 @@ export default function Login() {
     });
 
     if (response.ok) {  // successful login
-      // TODO: set token in local storage
-      const token = response.json().token;
+      
 
 
       navigate("/");
