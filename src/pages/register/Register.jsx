@@ -3,11 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./register.css";
 
-const user = new FormData();
-user.append("email", email.current.value);
-user.append("password", password.current.value);
-user.append("is_adviser", false); // TODO: get from toggle
-
 export default function Register() {
   const username = useRef();
   const email = useRef();
