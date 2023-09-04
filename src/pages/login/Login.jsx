@@ -22,7 +22,7 @@ export default function Login() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username: emailValue, password: passwordValue })
+      body: JSON.stringify({ username: usernameValue, password: passwordValue })
     });
 
     if (response.ok) {  // successful login
