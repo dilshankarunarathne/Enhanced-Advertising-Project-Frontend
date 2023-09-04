@@ -29,6 +29,7 @@ export default function Login() {
       );
       
       if (response.ok) {  // successful login
+        console.log('login successful...');
         const data = await response.json();
 
         console.log(data);
