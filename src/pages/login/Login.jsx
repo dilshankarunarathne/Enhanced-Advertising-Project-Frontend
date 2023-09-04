@@ -27,22 +27,11 @@ export default function Login() {
           }
         }
       );
-      console.log(response.data);
-      navigate('/');
+      
+      
     } catch (error) {
       console.error(error);
     }
-
-    const response = await fetch(
-      'http://127.0.0.1:8000/api/auth/login', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "multipart/form-data",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
-      },
-      body: formData
-    });
 
     if (response.ok) {  // successful login
       const data = await response.json();
