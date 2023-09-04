@@ -64,7 +64,7 @@ export default function Login() {
 
             <button className="loginButton">"Sign In"</button>
             <span className="loginForgot">Forgot Password?</span>
-            
+
             <div className="loginRegister">
               <span className="notamem">Not a member?</span>
               <Link to={"/register"}>
@@ -78,6 +78,7 @@ export default function Login() {
                 </button>
               </Link>
             </div>
+            
           </form>
         </div>
         <div
