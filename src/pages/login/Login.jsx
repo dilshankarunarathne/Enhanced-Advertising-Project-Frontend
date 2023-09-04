@@ -25,7 +25,7 @@ export default function Login() {
       body: JSON.stringify({ email: emailValue, password: passwordValue })
     });
 
-    if (response.ok) {  // successful
+    if (response.ok) {  // successful login
       navigate("/");
     }
   };
