@@ -40,7 +40,7 @@ export default function Login() {
           localStorage.setItem('token', token);
           navigate("/");
         } else {
-          console.error("Invalid response data:", data);
+          console.log(error);
         }
       } 
     } catch (error) {
