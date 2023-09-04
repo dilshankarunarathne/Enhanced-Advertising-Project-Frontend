@@ -13,7 +13,7 @@ export default function Login() {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('username', usernameValue);
+    formData.append('username', username.current.value);
     formData.append('password', passwordValue);
     
     const response = await fetch(
