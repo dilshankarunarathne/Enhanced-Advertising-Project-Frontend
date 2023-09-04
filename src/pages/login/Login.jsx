@@ -34,14 +34,11 @@ export default function Login() {
         const data = await response.data;
 
         console.log(data);
-    
-        if (data && data.token) {
-          const token = data.token;
-          localStorage.setItem('token', token);
-          navigate("/");
-        } else {
-          console.log(error);
-        }
+        
+        const token = data.token;
+        localStorage.setItem('token', token);
+        navigate("/");
+        
       } 
     } catch (error) {
       console.error(error);
