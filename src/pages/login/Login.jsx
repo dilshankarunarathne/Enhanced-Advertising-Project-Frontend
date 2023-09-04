@@ -26,7 +26,7 @@ export default function Login() {
     });
 
     if (response.ok) {  // successful login
-      const data = 
+      const data = await
 
 
       navigate("/");
