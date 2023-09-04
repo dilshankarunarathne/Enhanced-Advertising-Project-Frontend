@@ -16,12 +16,11 @@ export default function Register() {
     if (passwordAgain.current.value !== password.current.value) {
       passwordAgain.current.setCustomValidity("Password don't match");
     } else {
-      const user = {
-        username: username.current.value,
-        email: email.current.value,
-        password: password.current.value,
-        is_adviser: false // TODO: get from toggle
-      };
+
+      const user = new FormData();
+      user.append("email", email.current.value);
+      user.append("password", password.current.value);
+      user.append("is_adviser", false); // TODO: get from toggle
 
       const config = {
         headers: {
