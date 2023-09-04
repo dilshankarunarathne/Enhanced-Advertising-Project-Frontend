@@ -35,10 +35,13 @@ export default function Login() {
 
         console.log(data);
 
-        const token = data.token;
-        localStorage.setItem('token', token);
-  
-        navigate("/");
+        if (data && data.token) {
+          const token = data.token;
+          localStorage.setItem('token', token);
+          navigate("/");
+        } else {
+          console.error("Invalid response data:", data);
+        }
       } 
     } catch (error) {
       console.error(error);
