@@ -14,7 +14,7 @@ export default function Login() {
     e.preventDefault();
     
     const emailValue = email.current.value;
-    const passwordValue
+    const passwordValue = password.current.value;
   };
 
   return (
