@@ -19,6 +19,7 @@ export default function Register() {
         username: username.current.value,
         email: email.current.value,
         password: password.current.value,
+        
       };
 
       try {
