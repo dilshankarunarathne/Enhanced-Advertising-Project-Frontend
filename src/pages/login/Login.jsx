@@ -12,7 +12,6 @@ export default function Login() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    
     navigate("/");
   };
 
