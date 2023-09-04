@@ -5,7 +5,6 @@ import Camera from "../../components/openCamera/Camera";
 import { Navigate } from "react-router-dom";
 
 import "./home.css";
-import Login from './Login';
 
 const withAuth = (Component) => {
   const AuthRoute = () => {
