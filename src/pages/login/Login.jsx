@@ -13,7 +13,7 @@ export default function Login() {
   const handleClick = async (e) => {
     e.preventDefault();
     
-    const usernameValue = email.current.value;
+    const usernameValue = username.current.value;
     const passwordValue = password.current.value;
 
     const response = await fetch(
@@ -22,7 +22,7 @@ export default function Login() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: emailValue, password: passwordValue })
+      body: JSON.stringify({ username: emailValue, password: passwordValue })
     });
 
     if (response.ok) {  // successful login
