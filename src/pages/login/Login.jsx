@@ -35,7 +35,7 @@ export default function Login() {
 
         console.log(data);
         
-        const token = data.token;
+        const token = data.access_token;
         localStorage.setItem('token', token);
 
         console.log("token", token);
