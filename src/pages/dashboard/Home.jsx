@@ -9,8 +9,9 @@ export const Home = () => {
 
   return (
     <div>
-      
+
       <Navbar></Navbar>
+      
       <div className="homewrapper">
         <div className="Container">
           {" "}
