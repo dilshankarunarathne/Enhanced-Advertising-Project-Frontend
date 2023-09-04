@@ -34,7 +34,7 @@ export default function Login() {
         const token = data.access_token;
         localStorage.setItem('token', token);
 
-        navigate("/");        
+        navigate("/home");        
       } 
     } catch (error) {
       console.error(error);
