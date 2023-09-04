@@ -13,7 +13,7 @@ export default function Login() {
   const handleClick = async (e) => {
     e.preventDefault();
     
-    const emailValue = email.current.value;
+    const usernameValue = email.current.value;
     const passwordValue = password.current.value;
 
     const response = await fetch(
