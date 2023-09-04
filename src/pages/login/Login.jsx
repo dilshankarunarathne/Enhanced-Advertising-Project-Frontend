@@ -10,7 +10,7 @@ export default async function Login() {
   const password = useRef();
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     
     const emailValue = email.current.value;
