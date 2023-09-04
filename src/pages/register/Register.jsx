@@ -19,7 +19,7 @@ export default function Register() {
         username: username.current.value,
         email: email.current.value,
         password: password.current.value,
-        is_adviser: false
+        is_adviser: false // TODO: get from toggle
       };
 
       try {
