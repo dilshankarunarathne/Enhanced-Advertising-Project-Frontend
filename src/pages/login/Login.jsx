@@ -50,7 +50,7 @@ export default function Login() {
               type="text"
               required
               className="loginInput"
-              ref={email}
+              ref={username}
             />
 
             <input
