@@ -43,7 +43,7 @@ export default function Login() {
           <form className="loginBox" onSubmit={handleClick}>
             <span className="SignInName">Sign In Now.</span>
             <span className="details">Enter your details below.</span>
-            
+
             <input
               placeholder="Email"
               type="email"
@@ -51,6 +51,7 @@ export default function Login() {
               className="loginInput"
               ref={email}
             />
+            
             <input
               placeholder="Password"
               type="password"
