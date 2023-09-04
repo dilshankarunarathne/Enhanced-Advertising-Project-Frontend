@@ -47,7 +47,7 @@ export default function Login() {
 
             <input
               placeholder="Username"
-              type="email"
+              type="text"
               required
               className="loginInput"
               ref={email}
