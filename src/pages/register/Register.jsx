@@ -22,7 +22,7 @@ export default function Register() {
       };
 
       try {
-        // await axios.post("/auth/register", user);
+        await axios.post("/auth/register", user);
         navigate("/login");
       } catch (error) {
         console.log(error);
@@ -33,7 +33,7 @@ export default function Register() {
   const routeChange = () => {
     navigate("/login");
   };
-  
+
   return (
     <div className="login">
       <div className="loginWrapper">
