@@ -12,6 +12,7 @@ export default function Login() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    
     const formData = new FormData();
 
     const response = await fetch(
