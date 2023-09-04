@@ -17,7 +17,21 @@ export default function Login() {
     formData.append('username', username.current.value);
     formData.append('password', password.current.value);
     
-    
+    try {
+      const response = await axios.post(
+        'http://127.0.0.1:8000/api/auth/login',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }
+      );
+      console.log(response.data);
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+    }
 
     const response = await fetch(
       'http://127.0.0.1:8000/api/auth/login', {
