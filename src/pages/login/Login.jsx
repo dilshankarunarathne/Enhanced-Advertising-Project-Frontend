@@ -30,8 +30,6 @@ export default function Login() {
       
       if (response.status === 200) {  // successful login
         const data = await response.data;
-
-        console.log(data);
         
         const token = data.access_token;
         localStorage.setItem('token', token);
