@@ -30,8 +30,8 @@ export default function Login() {
 
       // console.log(response); // Debugging statement
       
-      if (response.status == 200) {  // successful login
-        const data = await response.json();
+      if (response.status === 200) {  // successful login
+        const data = await response.json;
 
         console.log(data);
 
