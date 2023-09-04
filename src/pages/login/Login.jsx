@@ -23,7 +23,9 @@ export default function Login() {
         'Content-Type': 'application/json',
       },
     }
-    
+    <body>
+      
+    </body>
     )
   };
 
