@@ -40,6 +40,7 @@ export default function Login() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
+          
           <form className="loginBox" onSubmit={handleClick}>
             <span className="SignInName">Sign In Now.</span>
             <span className="details">Enter your details below.</span>
@@ -60,7 +61,7 @@ export default function Login() {
               className="loginInput"
               ref={password}
             />
-            
+
             <button className="loginButton">"Sign In"</button>
             <span className="loginForgot">Forgot Password?</span>
             <div className="loginRegister">
