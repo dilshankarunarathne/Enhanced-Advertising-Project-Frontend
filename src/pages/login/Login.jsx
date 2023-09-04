@@ -39,15 +39,6 @@ export default function Login() {
       console.error(error);
     }
 
-    if (response.ok) {  // successful login
-      const data = await response.json();
-      const token = data.token;
-      localStorage.setItem('token', token);
-
-      navigate("/");
-    } else {
-      // TODO: show error
-    }
   };
 
   return (
