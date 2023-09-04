@@ -31,10 +31,10 @@ export default function Login() {
       // console.log(response); // Debugging statement
       
       if (response.status === 200) {  // successful login
-        const data = await response.json;
+        const data = await response.data;
 
         console.log(data);
-
+    
         if (data && data.token) {
           const token = data.token;
           localStorage.setItem('token', token);
