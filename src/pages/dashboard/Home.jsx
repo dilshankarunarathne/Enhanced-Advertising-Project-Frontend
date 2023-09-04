@@ -1,18 +1,26 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Camera from "../../components/openCamera/Camera";
+
 import "./home.css";
+
 export const Home = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
+    
     <div>
+
       <Navbar></Navbar>
+
       <div className="homewrapper">
         <div className="Container">
           {" "}
+
           <div className="LeftBar">
             <Camera></Camera>
           </div>
+
           <div className="RightBar">
             <span className="Topic">Extracted Details</span>
             <hr />
@@ -40,6 +48,7 @@ export const Home = () => {
                 <img src={PF + "adverticement/ads3.webp"} className="adverImg" alt="" />
               </div>
             </div>
+
             <div className="adverticement">
               <div className="SingleAdverticemet">
                 <img src={PF + "adverticement/ads4.webp"} className="adverImg" alt="" />
@@ -51,6 +60,7 @@ export const Home = () => {
                 <img src={PF + "adverticement/3.png"} className="adverImg" alt="" />
               </div>
             </div>
+
             {/*  
             <div className="adverticement">
               <div className="SingleAdverticemet">
@@ -75,6 +85,7 @@ export const Home = () => {
               </div>
             </div>
             */}
+            
           </div>
         </div>
       </div>
