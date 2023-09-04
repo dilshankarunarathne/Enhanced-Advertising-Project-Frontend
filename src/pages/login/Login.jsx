@@ -2,7 +2,6 @@ import "./login.css";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useRef } from "react";
-import axios from "axios";
 
 export default function Login() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
