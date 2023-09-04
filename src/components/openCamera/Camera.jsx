@@ -61,7 +61,7 @@ function Camera() {
             method: "POST",
             headers: {
 
-              
+            },
             body: formData,
           })
             .then((response) => {
