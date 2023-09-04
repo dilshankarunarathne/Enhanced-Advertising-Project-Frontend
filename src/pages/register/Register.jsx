@@ -29,6 +29,7 @@ export default function Register() {
       }
     }
   };
+  
   const routeChange = () => {
     navigate("/login");
   };
