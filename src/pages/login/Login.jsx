@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useRef } from "react";
 
-export default function Login() {
+export default async function Login() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const email = useRef();
   const password = useRef();
@@ -27,7 +27,7 @@ export default function Login() {
 
     if (response.ok) {  // successful login
       const data = await response.json();
-      
+
 
 
       navigate("/");
