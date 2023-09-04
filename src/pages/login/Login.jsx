@@ -24,6 +24,8 @@ export default function Login() {
       },
       body: JSON.stringify({ email: emailValue, password: passwordValue })
     });
+
+    
   };
 
   return (
