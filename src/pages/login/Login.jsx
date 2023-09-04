@@ -13,10 +13,6 @@ export default function Login() {
   const handleClick = async (e) => {
     e.preventDefault();
     
-    const user = new FormData();
-    
-    user.append("username", username.current.value);
-    user.append("password", password.current.value);
 
     const config = {
       headers: {
