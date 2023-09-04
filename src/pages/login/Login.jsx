@@ -46,7 +46,7 @@ export default function Login() {
             <span className="details">Enter your details below.</span>
 
             <input
-              placeholder="Email"
+              placeholder="Username"
               type="email"
               required
               className="loginInput"
@@ -78,7 +78,7 @@ export default function Login() {
                 </button>
               </Link>
             </div>
-            
+
           </form>
         </div>
         <div
