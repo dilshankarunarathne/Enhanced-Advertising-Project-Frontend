@@ -60,6 +60,8 @@ function Camera() {
           fetch("http://127.0.0.1:8000/api/image/evaluate", {
             method: "POST",
             headers: {
+
+              
             body: formData,
           })
             .then((response) => {
