@@ -13,7 +13,7 @@ export default function Login() {
   const handleClick = (e) => {
     e.preventDefault();
     
-    const 
+    const emailVal = email.current.value;
   };
 
   return (
