@@ -13,13 +13,7 @@ export default function Login() {
   const handleClick = async (e) => {
     e.preventDefault();
     
-    const config = {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
-      }
-    };
+    
 
     const response = await fetch(
       'http://127.0.0.1:8000/api/auth/login', {
