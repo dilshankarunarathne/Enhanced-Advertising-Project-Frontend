@@ -27,10 +27,10 @@ export default function Login() {
           }
         }
       );
-      
+
       console.log(response); // Debugging statement
       
-      if (response.ok) {  // successful login
+      if (response.status == 200) {  // successful login
         console.log('login successful...');
         const data = await response.json();
 
