@@ -23,6 +23,14 @@ export default function Register() {
         is_adviser: false // TODO: get from toggle
       };
 
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+        }
+      };
+
       try {
         console.log("registering user");
         await axios.post("http://127.0.0.1:8000/api/auth/register", user);
