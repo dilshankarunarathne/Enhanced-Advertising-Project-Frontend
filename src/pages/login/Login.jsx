@@ -28,10 +28,9 @@ export default function Login() {
         }
       );
 
-      console.log(response); // Debugging statement
+      // console.log(response); // Debugging statement
       
       if (response.status == 200) {  // successful login
-        console.log('login successful...');
         const data = await response.json();
 
         console.log(data);
