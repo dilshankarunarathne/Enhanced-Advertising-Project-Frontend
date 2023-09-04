@@ -11,7 +11,7 @@ const withAuth = (Component) => {
     const isAuthenticated = localStorage.getItem("token");
 
     if (!isAuthenticated) {
-      return <Redirect to="/login" />;
+      return <Navigate to="/login" replace />;
     }
 
     return <Component />;
