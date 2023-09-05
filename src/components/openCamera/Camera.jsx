@@ -56,7 +56,7 @@ function Camera() {
         canvas.toBlob((blob) => {
           const formData = new FormData();
           formData.append("image", blob, "image.jpg");
-
+        
           fetch("http://127.0.0.1:8000/api/image/evaluate", {
             method: "POST",
             headers: {
@@ -68,7 +68,6 @@ function Camera() {
               if (!response.ok) {
                 throw new Error("Network response was not ok");
               }
-              console.log(response.data);
               return response.text();
             })
             .then((data) => {
