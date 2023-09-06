@@ -47,7 +47,7 @@ export const Home = () => {
               </div>
               <div className="sub3">
                 <span className="subtitles">Age Limit</span>
-                <span className="subtitles">25-40 </span>
+                <span className="subtitles">{ageRange}</span>
               </div>
             </div>
 
