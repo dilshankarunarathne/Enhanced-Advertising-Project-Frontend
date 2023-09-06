@@ -27,11 +27,12 @@ export const Home = () => {
 
   const [ageRange, setAgeRange] = useState("");
   const [gender, setGender] = useState("");
+  const [imgUrl, setImgUel] = useState("");
 
   function updateAgeAndGender(newAgeRange, newGender, imgUrl) {
     setAgeRange(newAgeRange);
     setGender(newGender);
-    setImgUel(imgUrl)
+    setImgUel(imgUrl);
   }
 
   return (
