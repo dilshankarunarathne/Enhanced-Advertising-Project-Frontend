@@ -73,7 +73,7 @@ function Camera(props) {
             .then((data) => {
               console.log(data);
               
-              const [ageRange, gender, interest, imgUrl] = data;
+              const [ageRange, gender, interest, imgUrl] = JSON.parse(data);
 
               props.updateAgeAndGender(ageRange, gender, imgUrl, interest);
             })
