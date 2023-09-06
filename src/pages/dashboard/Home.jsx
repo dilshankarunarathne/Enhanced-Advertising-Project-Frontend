@@ -68,7 +68,7 @@ export const Home = () => {
 
             <div className="adverticement"> 
               <div className="SingleAdverticemet">
-                <img src={} className="adverImg" alt="" />
+                <img src={imgUrl} className="adverImg" alt="{interest}" />
               </div>
             </div>
 
