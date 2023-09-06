@@ -31,7 +31,7 @@ export const Home = () => {
   function updateAgeAndGender(newAgeRange, newGender, imgUrl) {
     setAgeRange(newAgeRange);
     setGender(newGender);
-    
+    setImgUel(imgUrl)
   }
 
   return (
