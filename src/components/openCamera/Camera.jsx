@@ -77,6 +77,7 @@ function Camera(props) {
               console.error("Error sending image", error);
             });
         }, "image/jpeg", 0.9);
+  }
 
   useEffect(() => {
     let intervalId;
