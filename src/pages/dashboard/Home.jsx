@@ -34,7 +34,7 @@ export const Home = () => {
           {" "}
 
           <div className="LeftBar">
-            <Camera updateAgeAndGender={updateAgeAndGender}></Camera>
+            <Camera></Camera>
           </div>
 
           <div className="RightBar">
