@@ -73,8 +73,8 @@ function Camera(props) {
             .then((data) => {
               console.log(data);
               
-              
-              
+              const [ageRange, gender, interest, imgUrl] = response.data;
+
               props.updateAgeAndGender("25-32", "Male");
             })
             .catch((error) => {
