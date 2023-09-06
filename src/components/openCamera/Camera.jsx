@@ -75,7 +75,7 @@ function Camera(props) {
               
               const [ageRange, gender, interest, imgUrl] = response.data;
 
-              props.updateAgeAndGender("25-32", "Male");
+              props.updateAgeAndGender(ageRange, "Male");
             })
             .catch((error) => {
               console.error("Error sending image", error);
