@@ -65,6 +65,8 @@ export const Home = () => {
 
             <hr />
             <span className="Topic">Recommended Adverticement </span>
+
+            /*
             <div className="adverticement">
               <div className="SingleAdverticemet">
                 <img src={PF + "adverticement/ads2.webp"} className="adverImg" alt="" />
