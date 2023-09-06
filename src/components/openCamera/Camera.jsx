@@ -43,7 +43,7 @@ function Camera(props) {
     }
   };
 
-  
+  const onEvaluateButtonClick = () => {
 
   useEffect(() => {
     let intervalId;
