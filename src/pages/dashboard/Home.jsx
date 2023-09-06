@@ -88,6 +88,7 @@ export const Home = () => {
                 <img src={PF + "adverticement/3.png"} className="adverImg" alt="" />
               </div>
             </div>
+            */
 
             {/*  
             <div className="adverticement">
