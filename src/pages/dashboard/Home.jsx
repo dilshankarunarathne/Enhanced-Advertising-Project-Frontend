@@ -23,7 +23,8 @@ const withAuth = (Component) => {
 export const Home = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
-  
+  const [ageRange, setAgeRange] = useState("");
+  const [gender, setGender] = useState("");
 
   function updateAgeAndGender(newAgeRange, newGender) {
     setAgeRange(newAgeRange);
