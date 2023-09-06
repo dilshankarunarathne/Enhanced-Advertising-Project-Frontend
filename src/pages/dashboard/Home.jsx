@@ -43,11 +43,11 @@ export const Home = () => {
             <div className="sub">
               <div className="sub2">
                 <span className="subtitles">Gender</span>
-                <span className="subtitles">Female</span>
+                <span className="subtitles"></span>
               </div>
               <div className="sub3">
                 <span className="subtitles">Age Limit</span>
-                <span className="subtitles">25-40 </span>
+                <span className="subtitles"></span>
               </div>
             </div>
 
