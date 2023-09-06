@@ -34,7 +34,7 @@ export const Home = () => {
           {" "}
 
           <div className="LeftBar">
-            <Camera updateAgeAndGender={updateAgeAndGender}></Camera>
+            <Camera></Camera>
           </div>
 
           <div className="RightBar">
@@ -43,11 +43,11 @@ export const Home = () => {
             <div className="sub">
               <div className="sub2">
                 <span className="subtitles">Gender</span>
-                <span className="subtitles">{gender}</span>
+                <span className="subtitles"></span>
               </div>
               <div className="sub3">
                 <span className="subtitles">Age Limit</span>
-                <span className="subtitles">{ageRange}</span>
+                <span className="subtitles"></span>
               </div>
             </div>
 
