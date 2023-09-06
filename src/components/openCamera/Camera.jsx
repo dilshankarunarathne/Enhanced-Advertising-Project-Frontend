@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Camera.css";
 
-function Camera() {
+function Camera(props) {
   const [stream, setStream] = useState(null);
   const videoRef = useRef(null);
 
