@@ -30,7 +30,7 @@ export const Home = () => {
   const [imgUrl, setImgUel] = useState("");
   const [interest, setInterest] = useState("");
 
-  function updateAgeAndGender(newAgeRange, newGender, imgUrl) {
+  function updateAgeAndGender(newAgeRange, newGender, imgUrl, interest) {
     setAgeRange(newAgeRange);
     setGender(newGender);
     setImgUel(imgUrl);
