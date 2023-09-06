@@ -33,6 +33,7 @@ export const Home = () => {
     setAgeRange(newAgeRange);
     setGender(newGender);
     setImgUel(imgUrl);
+    setInterest(interest);
   }
 
   return (
