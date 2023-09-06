@@ -101,7 +101,7 @@ function Camera(props) {
         <button onClick={handleButtonClick} className="Capturebutton">
           {stream ? "Stop Camera" : "Start Camera"}
         </button>
-        <button onClick={onEvaluateButtonClick} className="Capturebutton">
+        <button onClick={onEvaluateButtonClick} className="Capturebutton" />
       </div>
     </div>
   );
