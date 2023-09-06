@@ -66,6 +66,10 @@ export const Home = () => {
             <hr />
             <span className="Topic">Recommended Adverticement </span>
 
+            <div className="adverticement"> 
+            
+            </div>
+
             {/*
             <div className="adverticement">
               <div className="SingleAdverticemet">
