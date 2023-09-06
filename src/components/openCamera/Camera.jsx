@@ -45,38 +45,38 @@ function Camera(props) {
 
   const onEvaluateButtonClick = () => {
     const canvas = document.createElement("canvas");
-        canvas.width = videoRef.current.videoWidth;
-        canvas.height = videoRef.current.videoHeight;
-        canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+    canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
 
-        canvas.toBlob((blob) => {
-          const formData = new FormData();
-          formData.append("image", blob, "image.jpg");
-        
-          fetch("http://127.0.0.1:8000/api/image/evaluate", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-            body: formData,
-          })
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Network response was not ok");
-              }
-              return response.text();
-            })
-            .then((data) => {
-              console.log(data);
-              
-              const [ageRange, gender, interest, imgUrl] = JSON.parse(data);
+    canvas.toBlob((blob) => {
+      const formData = new FormData();
+      formData.append("image", blob, "image.jpg");
+    
+      fetch("http://127.0.0.1:8000/api/image/evaluate", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: formData,
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          console.log(data);
+          
+          const [ageRange, gender, interest, imgUrl] = JSON.parse(data);
 
-              props.updateAgeAndGender(ageRange, gender, imgUrl, interest);
-            })
-            .catch((error) => {
-              console.error("Error sending image", error);
-            });
-        }, "image/jpeg", 0.9);
+          props.updateAgeAndGender(ageRange, gender, imgUrl, interest);
+        })
+        .catch((error) => {
+          console.error("Error sending image", error);
+        });
+    }, "image/jpeg", 0.9);
   }
 
   useEffect(() => {
