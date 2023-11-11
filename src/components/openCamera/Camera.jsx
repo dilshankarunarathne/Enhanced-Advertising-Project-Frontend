@@ -37,34 +37,30 @@ function Camera(props) {
     }
   };
 
-  const onEvaluateButtonClick = () => {
-    const canvas = document.createElement("canvas");
-    canvas.width = videoRef.current.videoWidth;
-    canvas.height = videoRef.current.videoHeight;
-    canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
-
-    canvas.toBlob((blob) => {
-      const reader = new FileReader();
-      reader.onloadend = function() {
-        const base64data = reader.result;
-        if (socket.readyState === WebSocket.OPEN) {
-          socket.send(base64data);
-        }
-      }
-      reader.readAsDataURL(blob);
-    }, "image/jpeg", 0.9);
-  }
-
   useEffect(() => {
     let intervalId;
 
     if (stream) {
       intervalId = setInterval(() => {
-        
+        const canvas = document.createElement("canvas");
+        canvas.width = videoRef.current.videoWidth;
+        canvas.height = videoRef.current.videoHeight;
+        canvas.getContext("2d").drawImage(videoRef.current, 0, 0);
+
+        canvas.toBlob((blob) => {
+          const reader = new FileReader();
+          reader.onloadend = function() {
+            const base64data = reader.result;
+            if (socket.readyState === WebSocket.OPEN) {
+              socket.send(base64data);
+            }
+          }
+          reader.readAsDataURL(blob);
+        }, "image/jpeg", 0.9);
       }, 10000);
     }
     return () => clearInterval(intervalId);
-  }, [stream]);
+  }, [socket, stream]);
 
   return (
     <div className="video">
@@ -77,7 +73,6 @@ function Camera(props) {
         <button onClick={handleButtonClick} className="Capturebutton">
           {stream ? "Stop Camera" : "Start Camera"}
         </button>
-        <button onClick={onEvaluateButtonClick} className="Capturebutton" >Evaluate Now</button>
       </div>
     </div>
   );
