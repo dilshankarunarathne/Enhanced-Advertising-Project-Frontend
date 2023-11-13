@@ -13,7 +13,14 @@ function Camera(props) {
       console.log(`WebSocket error: ${error}`);
     };
     socket.onmessage = function(event) {
-      console.log(`Received: ${event.data}`);
+      const data = JSON.parse(event.data);
+      const modelOutput = data.model_output;
+      const range = modelOutput[0];
+      const gender = modelOutput[1];
+      const category = modelOutput[2];
+      const imageUrl = modelOutput[3];
+      console.log(range, gender, category, imageUrl);
+      props.updateAgeAndGender(range, gender, imageUrl, category);
     };
     return () => {
       socket.close();
