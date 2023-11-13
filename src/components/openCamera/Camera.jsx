@@ -9,11 +9,16 @@ function Camera(props) {
   useEffect(() => {
     const socket = new WebSocket('ws://localhost:8000/ws/video_stream/');
     setSocket(socket);
-
+    socket.onerror = function(error) {
+      console.log(`WebSocket error: ${error}`);
+    };
+    socket.onmessage = function(event) {
+      console.log(`Received: ${event.data}`);
+    };
     return () => {
       socket.close();
     };
-  }, []);
+}, []);
 
   const handleButtonClick = () => {
     if (stream) {
