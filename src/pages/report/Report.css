@@ -1,0 +1,23 @@
+.reportTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin: 20px;
+    padding-right: 30px;
+}
+
+.selectMonth {
+    width: 40%;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+table {
+    margin: 20px;
+    padding-right: 30px;
+}
