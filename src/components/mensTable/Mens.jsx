@@ -1,15 +1,57 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { Button, Modal, Input } from "react-bootstrap";
 import Navbar from "../../components/navbar/Navbar";
 import "./ManageAdverticement.css";
 
 export const Mens = () => {
+  const [data, setData] = useState([]);
+
   const [show, setShow] = useState(false);
+
+  const [name, setName] = useState('');
+  const [image, setImage] = useState(null);
+  const [age, setAge] = useState('');
+  const [gender, setGender] = useState('');
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('image', image);
+    formData.append('age', age);
+    formData.append('gender', gender);
+
+    const response = await fetch('http://localhost:8000/api/image', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response.ok) {
+      // handle successful upload
+      setName('');
+      setImage(null);
+      setAge('');
+      setGender('');
+      handleClose();
+    } else {
+      // handle error
+    }
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  useEffect(() => {
+    fetch('http://localhost:8000/api/image?gender=Male')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  console.log(data);
+
   return (
     <div className="mensWrapper">
       <div className="AddButton"> </div>
@@ -35,60 +77,15 @@ export const Mens = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Rual Octo</td>
-                    <td>
-                      {" "}
-                      <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
-                    </td>
-                    <td>Male</td>
-                    <td>27-40</td>
-                    <td className="EditDelete">
-                      <a href="#" class="edit" title="Edit" data-toggle="tooltip">
-                        <span>Edit</span>
-                      </a>
-                      <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                        <span>Delete</span>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Rual Octo</td>
-                    <td>
-                      {" "}
-                      <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
-                    </td>
-                    <td>Male</td>
-                    <td>27-40</td>
-                    <td className="EditDelete">
-                      <a href="#" class="edit" title="Edit" data-toggle="tooltip">
-                        <span>Edit</span>
-                      </a>
-                      <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                        <span>Delete</span>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>Rual Octo</td>
-                    <td>
-                      {" "}
-                      <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
-                    </td>
-                    <td>Male</td>
-                    <td>27-40</td>
-                    <td>
-                      <a href="#" class="edit" title="Edit" data-toggle="tooltip">
-                        <span>Edit</span>
-                      </a>
-                      <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                        <span>Delete</span>
-                      </a>
-                    </td>
-                  </tr>
+                  {data.map(([name, imgData, ageRange]) => (
+                      <tr>
+                          <td>#</td>
+                          <td>{name.replace('.jpg', '')}</td>
+                          <td><img src={`data:image/jpeg;base64,${imgData}`} alt={name} /></td>
+                          <td>{ageRange}</td>
+                          <td>Male</td>
+                      </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -101,15 +98,26 @@ export const Mens = () => {
                 <Modal.Title>Add Record</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <form>
+                <form onSubmit={onSubmit}>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
                   </div>
                   <div class="form-group mt-3">
-                    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Image" />
+                    <input
+                      type="file"
+                      class="form-control"
+                      placeholder="Image"
+                      onChange={(e) => setImage(e.target.files[0])}
+                    />
                   </div>
                   <div class="form-group mt-3">
-                    <select class="form-control">
+                    <select class="form-control" value={age} onChange={(e) => setAge(e.target.value)}>
                       <option selected hidden>
                         age group
                       </option>
@@ -120,9 +128,9 @@ export const Mens = () => {
                     </select>
                   </div>
                   <div class="form-group mt-3">
-                    <select class="form-control">
-                      <option>Male</option>
-                      <option>Female</option>
+                    <select class="form-control" value={gender} onChange={(e) => setGender(e.target.value)}>
+                      <option value={"Male"}>Male</option>
+                      <option value={"Female"}>Female</option>
                     </select>
                   </div>
 

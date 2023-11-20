@@ -69,9 +69,9 @@ export const Home = () => {
             <span className="Topic">Recommended Adverticement </span>
 
             <div className="adverticement"> 
-              <div className="SingleAdverticemet">
-                <img src={imgUrl} className="adverImg" alt={interest} />
-              </div>
+            <div className="SingleAdverticemet">
+              <img src={`data:image/jpeg;base64,${imgUrl}`} className="adverImg" alt={interest} />
+            </div>
             </div>
 
             {/*

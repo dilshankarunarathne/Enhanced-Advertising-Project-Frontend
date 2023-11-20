@@ -1,21 +1,68 @@
-import { Edit } from "@mui/icons-material";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { Button, Modal, Input } from "react-bootstrap";
-import Navbar from "../navbar/Navbar";
+import Navbar from "../../components/navbar/Navbar";
 import "./ManageAdverticement.css";
 
 export const Womens = () => {
+  const [data, setData] = useState([]);
+
   const [show, setShow] = useState(false);
+
+  const [name, setName] = useState('');
+  const [image, setImage] = useState(null);
+  const [age, setAge] = useState('');
+  const [gender, setGender] = useState('Female');
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('image', image);
+    formData.append('age', age);
+    formData.append('gender', gender);
+
+    const response = await fetch('http://localhost:8000/api/image', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response.ok) {
+      // handle successful upload
+      setName('');
+      setImage(null);
+      setAge('');
+      setGender('Female');
+      handleClose();
+    } else {
+      // handle error
+    }
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  useEffect(() => {
+    fetch('http://localhost:8000/api/image?gender=Female')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  console.log(data);
+
   return (
+  <div className="womensWrapper">
+    <div className="AddButton"> </div>
+
     <div class="container ">
       <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded col-12">
         <div className="rowTitle">
           <h2>Female Adverticement Details</h2>
+          <Button variant="primary" onClick={handleShow}>
+            Add New Adverticement
+          </Button>
         </div>
         <div class="row">
           <div class="table-responsive ">
@@ -30,67 +77,15 @@ export const Womens = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Rual Octo</td>
-                  <td>
-                    {" "}
-                    <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
-                  </td>
-                  <td>Female</td>
-                  <td>27-40</td>
-                  <td>
-                    <a href="#" class="view" title="View" data-toggle="tooltip" style={{ color: "#10ab80" }}>
-                      <i class="material-icons">&#xE417;</i>
-                    </a>
-                    <a href="#" class="edit" title="Edit" data-toggle="tooltip">
-                      <i class="material-icons">&#xE254;</i>
-                    </a>
-                    <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                      <i class="material-icons">&#xE872;</i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Rual Octo</td>
-                  <td>
-                    {" "}
-                    <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
-                  </td>
-                  <td>Female</td>
-                  <td>27-40</td>
-                  <td>
-                    <a href="#" class="view" title="View" data-toggle="tooltip" style={{ color: "#10ab80" }}>
-                      <i class="material-icons">&#xE417;</i>
-                    </a>
-                    <a href="#" class="edit" title="Edit" data-toggle="tooltip">
-                      <i class="material-icons">&#xE254;</i>
-                    </a>
-                    <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                      <i class="material-icons">&#xE872;</i>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Rual Octo</td>
-                  <td>
-                    {" "}
-                    <img src={PF + "adverticement/2.png"} className="adverImgTable" alt="" />
-                  </td>
-                  <td>Female</td>
-                  <td>27-40</td>
-                  <td>
-                    <a href="#" class="view" title="View" data-toggle="tooltip" style={{ color: "#10ab80" }}>
-                      <i class="material-icons">&#xE417;</i>
-                    </a>
-                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"></a>
-                    <a href="#" class="delete" title="Delete" data-toggle="tooltip" style={{ color: "red" }}>
-                      <i class="material-icons">&#xE872;</i>
-                    </a>
-                  </td>
-                </tr>
+                {data.map(([name, imgData, ageRange]) => (
+                    <tr>
+                        <td>#</td>
+                        <td>{name.replace('.jpg', '')}</td>
+                        <td><img src={`data:image/jpeg;base64,${imgData}`} alt={name} /></td>
+                        <td>{ageRange}</td>
+                        <td>Female</td>
+                    </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -103,18 +98,40 @@ export const Womens = () => {
               <Modal.Title>Add Record</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <form>
+              <form onSubmit={onSubmit}>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
                 </div>
                 <div class="form-group mt-3">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Country" />
+                  <input
+                    type="file"
+                    class="form-control"
+                    placeholder="Image"
+                    onChange={(e) => setImage(e.target.files[0])}
+                  />
                 </div>
                 <div class="form-group mt-3">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter City" />
+                  <select class="form-control" value={age} onChange={(e) => setAge(e.target.value)}>
+                    <option selected hidden>
+                      age group
+                    </option>
+                    <option>4-14</option>
+                    <option>13-26</option>
+                    <option>27-40</option>
+                    <option>Above 40</option>
+                  </select>
                 </div>
                 <div class="form-group mt-3">
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Country" />
+                  <select class="form-control" value={gender} onChange={(e) => setGender(e.target.value)}>
+                    <option value={"Male"}>Male</option>
+                    <option value={"Female"}>Female</option>
+                  </select>
                 </div>
 
                 <button type="submit" class="btn btn-success mt-4">
@@ -122,15 +139,13 @@ export const Womens = () => {
                 </button>
               </form>
             </Modal.Body>
-
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
             </Modal.Footer>
           </Modal>
-
-          {/* Model Box Finsihs */}
+          </div>
         </div>
       </div>
     </div>
