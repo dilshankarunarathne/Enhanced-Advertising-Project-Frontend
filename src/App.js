@@ -8,20 +8,20 @@ import Register from "./pages/register/Register";
 import { Report } from "./pages/report/Report";
 
 function App() {
-  const isLoggedIn = false; // set this to true if the user is logged in
+  const isLoggedIn = true; // set this to true if the user is logged in
 
   return (
     <BrowserRouter>
-    <Routes>
-    <Route path="/register" element={<Register></Register>} />
-    <Route path="/login" element={<Login />}></Route>
-    <Route path="/manageAdeverticement" element={<ManageAdverticement />}></Route>
-    <Route path="/reports" element={<Report />}></Route>
-    <Route path="/profile" element={<Profile />}></Route>
-    {isLoggedIn ? <Route exact  path="/" element={<Home />}></Route> : <Route exact  path="/" element={<Login />}></Route>}
-    <Route exact path="/home" element={<Home />}></Route>
-    </Routes>
-  </BrowserRouter> 
+      <Routes>
+        <Route path="/register" element={<Register></Register>} />
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/manageAdeverticement" element={<ManageAdverticement />}></Route>
+        <Route path="/reports" element={<Report />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
+        {isLoggedIn ? <Route exact  path="/" element={<Home />}></Route> : <Route exact  path="/" element={<Home />}></Route>}
+        <Route exact path="/home" element={<Home />}></Route>
+      </Routes>
+    </BrowserRouter> 
   );
 }
 
