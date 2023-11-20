@@ -25,32 +25,30 @@ const withAuth = (Component) => {
 export const Home = () => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
+  const [ads, setAds] = useState([]);
   const [ageRange, setAgeRange] = useState("");
   const [gender, setGender] = useState("");
-  const [imgUrl, setImgUel] = useState("");
   const [interest, setInterest] = useState("");
 
-  function updateAgeAndGender(newAgeRange, newGender, imgUrl, interest) {
-    setAgeRange(newAgeRange);
-    setGender(newGender);
-    setImgUel(imgUrl);
-    setInterest(interest);
+  function updateAgeAndGender(data) {
+    if (Array.isArray(data.model_output)) {
+      setAgeRange(data.model_output[0]);
+      setGender(data.model_output[1]);
+      setInterest(data.model_output[2]);
+      setAds(data.model_output[3]);
+    } else {
+      console.error('model_output is not an array:', data);
+    }
   }
 
   return (
-    
     <div>
-
       <Navbar></Navbar>
-
       <div className="homewrapper">
         <div className="Container">
-          {" "}
-
           <div className="LeftBar">
             <Camera updateAgeAndGender={updateAgeAndGender}></Camera>
           </div>
-
           <div className="RightBar">
             <span className="Topic">Extracted Details</span>
             <hr />
@@ -64,67 +62,15 @@ export const Home = () => {
                 <span className="subtitles">{ageRange}</span>
               </div>
             </div>
-
             <hr />
             <span className="Topic">Recommended Adverticement </span>
-
-            <div className="adverticement"> 
-            <div className="SingleAdverticemet">
-              <img src={`data:image/jpeg;base64,${imgUrl}`} className="adverImg" alt={interest} />
-            </div>
-            </div>
-
-            {/*
             <div className="adverticement">
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/ads2.webp"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/cream1.jpg"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/ads3.webp"} className="adverImg" alt="" />
-              </div>
+              {ads.map((ad, index) => (
+                <div key={index} className="SingleAdverticemet">
+                  <img src={`data:image/jpeg;base64,${ad.banner}`} className="adverImg" alt={ad.name} />
+                </div>
+              ))}
             </div>
-
-            <div className="adverticement">
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/ads4.webp"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/3.png"} className="adverImg" alt="" />
-              </div>
-            </div>
-            */}
-
-            {/*  
-            <div className="adverticement">
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
-              </div>
-            </div>
-            <div className="adverticement">
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
-              </div>
-              <div className="SingleAdverticemet">
-                <img src={PF + "adverticement/2.png"} className="adverImg" alt="" />
-              </div>
-            </div>
-            */}
-
           </div>
         </div>
       </div>
