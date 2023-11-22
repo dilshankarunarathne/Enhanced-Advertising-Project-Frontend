@@ -4,15 +4,27 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useRef } from "react";
 
-export default function Login() {
+export default function Login({ setIsLoggedIn }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   const email = useRef();
   const password = useRef();
   const navigate = useNavigate();
+
   const handleClick = (e) => {
     e.preventDefault();
-    // console.log(email.current.value);
-    navigate("/");
+    const userEmail = email.current.value;
+    const userPassword = password.current.value;
+
+    console.log(userEmail + " " + userPassword);
+
+    if (userEmail === 'testuser@gmail.com' && userPassword === 'testpwd') {
+      console.log('Login successful');
+      setIsLoggedIn(true);
+      navigate("/");
+    } else {
+      alert('Invalid username or password');
+    }
   };
 
   return (
